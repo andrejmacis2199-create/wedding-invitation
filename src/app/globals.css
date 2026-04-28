@@ -1,0 +1,101 @@
+@import "tailwindcss";
+
+:root {
+  --cream: #faf6f0;
+  --beige: #ede4d3;
+  --warm-brown: #5d4a3a;
+  --warm-brown-soft: #8a7763;
+  --accent: #b89968;
+  --accent-dark: #997a4a;
+  --soft-accent: #d4c4a8;
+}
+
+@theme {
+  --color-cream: #faf6f0;
+  --color-beige: #ede4d3;
+  --color-warm-brown: #5d4a3a;
+  --color-warm-brown-soft: #8a7763;
+  --color-accent: #b89968;
+  --color-accent-dark: #997a4a;
+  --color-soft-accent: #d4c4a8;
+
+  --font-heading: var(--font-cormorant);
+  --font-script: var(--font-marck);
+  --font-body: var(--font-manrope);
+}
+
+html {
+  color-scheme: light only;
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  background-color: #faf6f0;
+  color: #5d4a3a;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--font-manrope), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* учитываем safe-area iOS (нотч/нижняя панель) */
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* плавные переходы по умолчанию */
+a,
+button {
+  transition: color 300ms ease, background-color 300ms ease, border-color 300ms ease, transform 300ms ease;
+}
+
+/* секционный лейбл-ритм */
+.eyebrow {
+  font-family: var(--font-marck), cursive;
+  font-size: 1.75rem;
+  color: #997a4a;
+  letter-spacing: 0.02em;
+  line-height: 1;
+}
+
+@media (min-width: 768px) {
+  .eyebrow {
+    font-size: 2.25rem;
+  }
+}
+
+.section-title {
+  font-family: var(--font-cormorant), serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 2.25rem;
+  color: #5d4a3a;
+  letter-spacing: 0.01em;
+  line-height: 1.15;
+}
+
+@media (min-width: 768px) {
+  .section-title {
+    font-size: 3rem;
+  }
+}
+
+.gold-line {
+  display: inline-block;
+  width: 48px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #b89968, transparent);
+}
+
+/* ползущая анимация прорисовки SVG */
+@keyframes drawIn {
+  from { stroke-dashoffset: 1000; }
+  to { stroke-dashoffset: 0; }
+}
+
+.draw-svg path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: drawIn 2.5s ease-out forwards;
+}
