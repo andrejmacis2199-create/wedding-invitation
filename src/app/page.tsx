@@ -40,11 +40,11 @@ export default function Home() {
       <section
         ref={heroRef}
         id="hero"
-        className="relative h-screen min-h-[640px] w-full flex items-center justify-center text-cream overflow-hidden bg-warm-brown"
+        className="relative h-screen min-h-[640px] w-full flex items-end justify-center pb-16 md:pb-24 text-cream overflow-hidden bg-warm-brown"
       >
         <motion.div
-          className="absolute inset-0 will-change-transform"
-          style={{ scale: bgScale, y: bgY }}
+          className="absolute inset-0 will-change-transform overflow-hidden"
+          style={{ scale: bgScale, y: bgY, x: '-8%' }}
         >
           <Image
             src="/photos/IMG_0861.JPG"
@@ -53,8 +53,8 @@ export default function Home() {
             priority
             sizes="100vw"
             quality={75}
-            className="object-cover"
-            style={{ objectPosition: '78% center' }}
+            className="object-cover scale-110"
+            style={{ objectPosition: 'center' }}
           />
         </motion.div>
         <div className="absolute inset-0 bg-warm-brown/30" />
@@ -137,26 +137,6 @@ export default function Home() {
           >
             <Monogram size={88} />
           </motion.div>
-        </motion.div>
-
-        {/* scroll indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1, y: [0, 8, 0] }}
-          transition={{ delay: 2.2, duration: 2.5, repeat: Infinity, ease: 'easeInOut' }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10"
-        >
-          <svg
-            width="20"
-            height="32"
-            viewBox="0 0 22 36"
-            fill="none"
-            className="text-cream/80"
-            aria-hidden="true"
-          >
-            <rect x="1" y="1" width="20" height="34" rx="10" stroke="currentColor" strokeWidth="1.2" />
-            <circle cx="11" cy="10" r="2" fill="currentColor" />
-          </svg>
         </motion.div>
       </section>
 
