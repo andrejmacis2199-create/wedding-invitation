@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import { Cormorant_Garamond, Marck_Script, Manrope } from 'next/font/google';
+import MotionProvider from '../components/MotionProvider';
 import './globals.css';
 
 const cormorant = Cormorant_Garamond({
@@ -42,7 +43,9 @@ export default function RootLayout({
       className={`${cormorant.variable} ${marck.variable} ${manrope.variable}`}
       style={{ colorScheme: 'light' }}
     >
-      <body className="bg-cream text-warm-brown font-body antialiased">{children}</body>
+      <body className="bg-cream text-warm-brown font-body antialiased">
+        <MotionProvider>{children}</MotionProvider>
+      </body>
     </html>
   );
 }

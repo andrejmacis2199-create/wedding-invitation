@@ -41,7 +41,7 @@ const ImportantInfo: React.FC<ImportantInfoProps> = ({
 
         <div className="mb-12">
           <p className="font-body text-base md:text-lg text-warm-brown leading-relaxed mb-5">
-            Будет предоставлен трансфер до места проведения
+            Будет предоставлен трансфер до места проведения{' '}
             <br className="hidden md:block" />
             торжества и обратно — подробности в чате
           </p>

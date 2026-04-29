@@ -1,17 +1,20 @@
 'use client';
 
+import dynamic from 'next/dynamic';
+import Image from 'next/image';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import CountdownTimer from '../components/CountdownTimer';
 import LocationMap from '../components/LocationMap';
-import RSVPSection from '../components/RSVPSection';
-import Timeline from '../components/Timeline';
-import DressCode from '../components/DressCode';
-import GiftPreferences from '../components/GiftPreferences';
-import ImportantInfo from '../components/ImportantInfo';
 import Welcome from '../components/Welcome';
 import Divider from '../components/Divider';
 import { Dove, Laurel, Monogram, Heart } from '../components/Ornaments';
+
+const Timeline = dynamic(() => import('../components/Timeline'));
+const DressCode = dynamic(() => import('../components/DressCode'));
+const GiftPreferences = dynamic(() => import('../components/GiftPreferences'));
+const ImportantInfo = dynamic(() => import('../components/ImportantInfo'));
+const RSVPSection = dynamic(() => import('../components/RSVPSection'));
 
 const fadeIn = {
   initial: { opacity: 0, y: 24 },
@@ -37,17 +40,23 @@ export default function Home() {
       <section
         ref={heroRef}
         id="hero"
-        className="relative h-screen min-h-[640px] w-full flex items-center justify-center text-cream overflow-hidden"
+        className="relative h-screen min-h-[640px] w-full flex items-center justify-center text-cream overflow-hidden bg-warm-brown"
       >
         <motion.div
-          className="absolute inset-0 bg-cover"
-          style={{
-            backgroundImage: "url('/photos/IMG_0861.JPG')",
-            backgroundPosition: '38% center',
-            scale: bgScale,
-            y: bgY,
-          }}
-        />
+          className="absolute inset-0 will-change-transform"
+          style={{ scale: bgScale, y: bgY }}
+        >
+          <Image
+            src="/photos/IMG_0861.JPG"
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            quality={75}
+            className="object-cover"
+            style={{ objectPosition: '50% 30%' }}
+          />
+        </motion.div>
         <div className="absolute inset-0 bg-warm-brown/30" />
 
         {/* голубь сверху */}
