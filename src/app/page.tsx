@@ -40,7 +40,7 @@ export default function Home() {
       <section
         ref={heroRef}
         id="hero"
-        className="relative h-screen min-h-[640px] w-full flex items-end justify-center pb-16 md:pb-24 text-cream overflow-hidden bg-warm-brown"
+        className="relative h-screen min-h-[640px] w-full flex items-end justify-center pb-6 md:pb-10 text-cream overflow-hidden bg-warm-brown"
       >
         <motion.div
           className="absolute inset-0 will-change-transform overflow-hidden"
@@ -73,15 +73,6 @@ export default function Home() {
           style={{ y: contentY, opacity: contentOpacity }}
           className="relative z-10 text-center px-6"
         >
-          <motion.p
-            initial={{ y: -10, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.6, duration: 1 }}
-            className="font-script text-2xl md:text-3xl mb-4 text-cream/95"
-          >
-            то самое время · то самое место
-          </motion.p>
-
           {/* имена с лавровыми ветвями */}
           <div className="flex items-center justify-center gap-4 md:gap-6 mb-6">
             <motion.div
@@ -133,9 +124,9 @@ export default function Home() {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 0.9, scale: 1 }}
             transition={{ delay: 1.7, duration: 1.2 }}
-            className="mt-10 md:mt-12 flex justify-center text-cream"
+            className="mt-6 md:mt-8 flex justify-center text-cream"
           >
-            <Monogram size={88} />
+            <Monogram size={72} />
           </motion.div>
         </motion.div>
       </section>
