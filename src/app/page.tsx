@@ -54,7 +54,7 @@ export default function Home() {
             sizes="100vw"
             quality={75}
             className="object-cover"
-            style={{ objectPosition: '65% center' }}
+            style={{ objectPosition: '78% center' }}
           />
         </motion.div>
         <div className="absolute inset-0 bg-warm-brown/30" />
@@ -83,7 +83,7 @@ export default function Home() {
           </motion.p>
 
           {/* имена с лавровыми ветвями */}
-          <div className="flex items-center justify-center gap-4 md:gap-6 mb-6 mt-40 sm:mt-52 md:mt-64">
+          <div className="flex items-center justify-center gap-4 md:gap-6 mb-6">
             <motion.div
               initial={{ x: -20, opacity: 0 }}
               animate={{ x: 0, opacity: 0.85 }}
@@ -97,10 +97,10 @@ export default function Home() {
               initial={{ y: 16, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.9, duration: 1.2 }}
-              className="font-script text-6xl sm:text-7xl md:text-9xl leading-none"
+              className="font-script text-5xl sm:text-6xl md:text-8xl leading-none"
             >
               Андрей
-              <span className="block font-heading italic text-2xl sm:text-3xl md:text-5xl my-1 sm:my-2 text-cream/90">
+              <span className="block font-heading italic text-xl sm:text-2xl md:text-4xl my-1 sm:my-2 text-cream/90">
                 &amp;
               </span>
               Виктория
