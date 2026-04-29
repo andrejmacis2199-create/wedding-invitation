@@ -54,7 +54,7 @@ export default function Home() {
             sizes="100vw"
             quality={75}
             className="object-cover"
-            style={{ objectPosition: '50% 30%' }}
+            style={{ objectPosition: '65% center' }}
           />
         </motion.div>
         <div className="absolute inset-0 bg-warm-brown/30" />
@@ -83,7 +83,7 @@ export default function Home() {
           </motion.p>
 
           {/* имена с лавровыми ветвями */}
-          <div className="flex items-center justify-center gap-4 md:gap-6 mb-6">
+          <div className="flex items-center justify-center gap-4 md:gap-6 mb-6 mt-40 sm:mt-52 md:mt-64">
             <motion.div
               initial={{ x: -20, opacity: 0 }}
               animate={{ x: 0, opacity: 0.85 }}
