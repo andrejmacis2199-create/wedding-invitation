@@ -8,7 +8,7 @@ import CountdownTimer from '../components/CountdownTimer';
 import LocationMap from '../components/LocationMap';
 import Welcome from '../components/Welcome';
 import Divider from '../components/Divider';
-import { Dove, Laurel, Monogram, Heart } from '../components/Ornaments';
+import { Dove, Laurel, Monogram, Heart, Branch } from '../components/Ornaments';
 
 const Timeline = dynamic(() => import('../components/Timeline'));
 const DressCode = dynamic(() => import('../components/DressCode'));
@@ -44,7 +44,7 @@ export default function Home() {
       >
         <motion.div
           className="absolute inset-0 will-change-transform overflow-hidden"
-          style={{ scale: bgScale, y: bgY, x: '-8%' }}
+          style={{ scale: bgScale, y: bgY }}
         >
           <Image
             src="/photos/IMG_0861.JPG"
@@ -58,6 +58,38 @@ export default function Home() {
           />
         </motion.div>
         <div className="absolute inset-0 bg-warm-brown/30" />
+
+        {/* левая декоративная планка */}
+        <div className="absolute inset-y-0 left-0 w-12 md:w-20 bg-warm-brown/95 z-[5] flex flex-col items-center justify-between py-8 md:py-12 pointer-events-none border-r border-accent/30">
+          <div className="text-cream/70">
+            <Branch size={40} />
+          </div>
+          <span
+            className="font-script text-cream/80 text-sm md:text-base tracking-[0.4em] whitespace-nowrap"
+            style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}
+          >
+            save the date
+          </span>
+          <div className="text-cream/70">
+            <Branch size={40} flip />
+          </div>
+        </div>
+
+        {/* правая декоративная планка */}
+        <div className="absolute inset-y-0 right-0 w-12 md:w-20 bg-warm-brown/95 z-[5] flex flex-col items-center justify-between py-8 md:py-12 pointer-events-none border-l border-accent/30">
+          <div className="text-cream/70">
+            <Branch size={40} />
+          </div>
+          <span
+            className="font-script text-cream/80 text-sm md:text-base tracking-[0.4em] whitespace-nowrap"
+            style={{ writingMode: 'vertical-rl' }}
+          >
+            07 · 08 · 2026
+          </span>
+          <div className="text-cream/70">
+            <Branch size={40} flip />
+          </div>
+        </div>
 
         {/* голубь сверху */}
         <motion.div
